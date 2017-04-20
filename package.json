@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-bower-requirejs",     "homepage": "https://github.com/npmtest/node-npmtest-bower-requirejs",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-bower-requirejs.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  bower-requirejs (v1.2.0)  [![npm package](https://img.shields.io/npm/v/npmtest-bower-requirejs.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-bower-requirejs) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-bower-requirejs.svg)](https://travis-ci.org/npmtest/node-npmtest-bower-requirejs)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-bower-requirejs",
+    "keywords": [
+        "coverage",
+        "test",
+        "bower-requirejs"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_bower_requirejs.js",
+    "name": "npmtest-bower-requirejs",
+    "nameAlias": "npmtest_bower_requirejs",
+    "nameOriginal": "npmtest-bower-requirejs",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-bower-requirejs.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
